@@ -1,0 +1,65 @@
+CREATE TABLE Uzivatel (
+    userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username varchar(255),
+    bday varchar(255),
+    mail varchar(255),
+    penezenka varchar(255),
+    knihovna varchar(255),
+    pratele varchar(255),
+    jmeno varchar(255),
+    heslo varchar(255),
+    karty varchar(255),
+    achievementy varchar(255)
+);
+
+CREATE TABLE Games (
+    hryID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nazev varchar(255),
+    popis varchar(255),
+    zanr varchar(255)
+);
+
+CREATE TABLE Inventar (
+    inventarID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    hra varchar(255),
+    nazev varchar(255),
+    tradeable varchar(255),
+    sellable varchar(255),
+    tag varchar(255),
+    owner varchar(255)
+);
+
+CREATE TABLE Karty (
+    kartaID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    cisloKarty varchar(255),
+    datumSpotreby varchar(255),
+    jmeno varchar(255),
+    active varchar(255)
+);
+
+CREATE TABLE Achievement (
+    achID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    hra varchar(255),
+    jmeno varchar(255),
+    secret varchar(255)
+);
+
+INSERT INTO Uzivatel (username,bday,mail,penezenka,knihovna,pratele,jmeno,heslo,karty,achievementy)
+VALUES ('Pepis', '1996-05-06', 'pepicek@haha.com', '', '', '', 'Pepa', 'sdjbvgsfbhvg', '', ''),
+       ('Kolobezka45', '2010-12-11', 'terezka@haha.com', '', '', '', 'Tereza', 'kotatko5', '', ''),
+       ('Trombon845', '2008-03-25', 'honzicek@haha.com', '', '', '', 'Jan', 'SuPaCuPaHeSlO9', '', '');  
+       
+INSERT INTO Games (nazev,popis,zanr)
+VALUES ('League of Legends', 'Nebudeš mít život', 'Multiplayer online battle arena, akční RPG'),
+       ('Fortnite', 'PewPew', 'Battle royale, plošinovka, third person shooter'),
+       ('Among us', 'Červený je sus', 'Hra o přežití, videohra pro více hráčů'); 
+       
+INSERT INTO Inventar (hra,nazev,tradeable,sellable,tag,owner)
+VALUES ('CS:GO', 'Knife', False, True, , 'CS:GO, Knife', '1'),
+       ('CS:GO', 'Blue Knife', True, True, , 'CS:GO, Knife, Blue', '2'),
+       ('CS:GO', 'Red Knife', True, False,'CS:GO, Knife, Red', '3' ); 
+       
+INSERT INTO Karty (cisloKarty,datumSpotreby,jmeno,active)
+VALUES (1234 4567 7891 1234, '12/25',Pepa Kočkovic, True),
+       (7897 4564 1231 1593, '06/24', Tereza Koloběžková, True),
+       (1478 5236 9785 5987, '10/23', Jan Suk,True); 
