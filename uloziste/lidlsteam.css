@@ -1,6 +1,6 @@
-myHeader {
+Header {
 	background-color: black;
-	color: white;
+	color: rgb(255, 255, 255);
 	padding: 40px;
 	text-align: center;
   } 
