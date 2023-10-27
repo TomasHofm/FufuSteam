@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FufuSteam</title>
+    <style>
+        body {
+            background-color: #171a21;
+            color: #cfcfcf;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #header {
+            background-color: #1b2838;
+            padding: 20px;
+        }
+
+        #menu {
+            background-color: #10151e;
+            padding: 10px;
+        }
+
+        #content {
+            padding: 20px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #cfcfcf;
+        }
+
+        img {
+            max-width: 30%;
+            float: right;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideIn 3s 2s forwards;
+        }
+
+        .login-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .login-button {
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        .login-button:hover {
+            background-color: #27ae60;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Vítejte na FufuSteam</h1>
+    </div>
+    <div id="menu">
+        <h2>Menu</h2>
+        <a href="#">Obchod</a> | <a href="#">Hry</a> | <a href="#">Přátelé</a>
+    </div>
+    <div id="content">
+        <img src="https://variety.com/wp-content/uploads/2018/07/spiderman_screen_ps4_002_1465875814.jpg?w=1000&h=563&crop=1"
+            alt="Obrázek hry">
+    </div>
+    <div class="login-buttons">
+        <a class="login-button" href="#">Přihlásit se</a>
+        <a class="login-button" href="#">Registrovat</a>
+    </div>
+</body>
+
+</html>
