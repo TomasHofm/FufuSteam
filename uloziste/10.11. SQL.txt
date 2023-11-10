@@ -1,0 +1,74 @@
+CREATE TABLE `User` (
+  `userID` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `username` varchar(255),
+  `bday` date,
+  `mail` varchar(255),
+  `wallet` int,
+  `library` varchar(255),
+  `friends` int,
+  `name` varchar(255),
+  `password` varchar(255),
+  `cards` int,
+  `achievements` int
+);
+
+CREATE TABLE `Games` (
+  `gamesID` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `name` varchar(255),
+  `description` varchar(255),
+  `genre` varchar(255)
+);
+
+CREATE TABLE `Items` (
+  `inventoryID` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `game` int,
+  `name` varchar(255),
+  `tradeable` boolean,
+  `sellable` boolean,
+  `tag` varchar(255),
+  `owner` int
+);
+
+CREATE TABLE `Cards` (
+  `cardID` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `cardnumber` int,
+  `expirationdate` date,
+  `name` varchar(255),
+  `active` varchar(255)
+);
+
+CREATE TABLE `Achievements` (
+  `achID` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `game` int,
+  `name` varchar(255),
+  `secret` boolean
+);
+
+ALTER TABLE `Games` ADD FOREIGN KEY (`gamesID`) REFERENCES `Items` (`game`);
+
+ALTER TABLE `User` ADD FOREIGN KEY (`cards`) REFERENCES `Cards` (`cardID`);
+
+ALTER TABLE `Games` ADD FOREIGN KEY (`gamesID`) REFERENCES `Achievements` (`achID`);
+
+ALTER TABLE `User` ADD FOREIGN KEY (`userID`) REFERENCES `User` (`friends`);
+
+CREATE TABLE `User_Achievement` (
+  `user_achievements` int,
+  `achievements_achID` int,
+  PRIMARY KEY (`user_achievements`, `achievements_achID`)
+);
+
+ALTER TABLE `User_Achievement` ADD FOREIGN KEY (`user_achievements`) REFERENCES `User` (`achievements`);
+
+ALTER TABLE `User_Achievement` ADD FOREIGN KEY (`achievements_achID`) REFERENCES `Achievements` (`achID`);
+
+
+CREATE TABLE `User_games` (
+  `user_library` varchar(255),
+  `games_gameID` int,
+  PRIMARY KEY (`user_library`, `games_gameID`)
+);
+
+ALTER TABLE `User_Games` ADD FOREIGN KEY (`user_library`) REFERENCES `User` (`library`);
+
+ALTER TABLE `User_Games` ADD FOREIGN KEY (`games_gameID`) REFERENCES `Games` (`gamesID`);
