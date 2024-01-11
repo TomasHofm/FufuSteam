@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #ccc;
+    margin: 0;
+}
+
+header {
+    background-color: #171a21;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-logo img {
+    max-width: 100%;
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.main-content {
+    background-color: #333;
+    color: #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-form {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #444;
+    color: #ccc;
+    border: 1px solid #555;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #777;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #999;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#register-form {
+    text-align: center;
+}
+
+#register-form button {
+    margin-top: 10px;
+    /* Adjust the top margin as needed */
+}
